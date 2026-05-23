@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneha Ghosh — Strategy & Growth</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f0f0f;--card:#1a1a1a;--accent:#6c63ff;--accent2:#00c9a7;--text:#e0e0e0;--muted:#888;--border:#2a2a2a}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,.85);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid var(--border);padding:0 2rem}
+nav .inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .logo{font-weight:700;font-size:1.1rem;color:#fff}
+nav .links a{margin-left:1.8rem;font-size:.85rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;transition:color .2s}
+nav .links a:hover{color:#fff}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem}
+.hero h1{font-size:3.2rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.tagline{font-size:1.15rem;color:var(--muted);max-width:680px;margin:0 auto 2rem}
+.hero .cta{display:inline-block;padding:.75rem 2rem;border:1px solid var(--accent);border-radius:6px;font-weight:600;color:var(--accent);transition:all .25s}
+.hero .cta:hover{background:var(--accent);color:#fff}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:1000px;margin:auto}
+.section-title{font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.section-subtitle{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
+.divider{width:50px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;margin-bottom:2rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.about-grid p{color:var(--muted);font-size:.95rem}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.5rem}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center}
+.stat .num{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .label{font-size:.75rem;color:var(--muted);margin-top:.3rem;text-transform:uppercase;letter-spacing:.05em}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+.skill-card h3{font-size:1rem;margin-bottom:.8rem;color:#fff}
+.skill-card ul{list-style:none;padding:0}
+.skill-card li{font-size:.85rem;color:var(--muted);padding:.25rem 0;position:relative;padding-left:1rem}
+.skill-card li::before{content:'';position:absolute;left:0;top:.6rem;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:2.5rem}
+.tl-item::before{content:'';position:absolute;left:-2rem;top:.45rem;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl-item h3{font-size:1.05rem;color:#fff;margin-bottom:.15rem}
+.tl-item .meta{font-size:.8rem;color:var(--accent2);margin-bottom:.6rem;font-weight:500}
+.tl-item p,.tl-item ul{font-size:.88rem;color:var(--muted)}
+.tl-item ul{padding-left:1.2rem;margin-top:.4rem}
+.tl-item li{margin-bottom:.35rem}
+.impact-tag{display:inline-block;background:rgba(108,99,255,.15);color:var(--accent);font-size:.75rem;font-weight:600;padding:.2rem .6rem;border-radius:4px;margin-bottom:.5rem}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.3rem}
+.edu-card h3{font-size:.95rem;color:#fff;margin-bottom:.2rem}
+.edu-card .school{font-size:.85rem;color:var(--accent2)}
+.edu-card .detail{font-size:.8rem;color:var(--muted);margin-top:.3rem}
+
+/* ACHIEVEMENTS */
+.achievements{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.ach{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.3rem;font-size:.9rem;color:var(--muted)}
+
+/* CONTACT */
+.contact-section{text-align:center}
+.contact-info{margin-top:1.5rem;font-size:.95rem;color:var(--muted)}
+.contact-info a{font-weight:500}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border)}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem}
+  .about-grid,.achievements{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  nav .links a{margin-left:1rem;font-size:.75rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <div class="logo">SG</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Sneha <span>Ghosh</span></h1>
+    <p class="tagline">Strategy & Growth leader with 7+ years driving multi-million dollar ARR through Product Strategy, Pricing & Monetisation, and GTM Execution in high-growth SaaS ecosystems.</p>
+    <a href="#contact" class="cta">Get in Touch</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">Turning market complexity into revenue clarity.</p>
+    <div class="about-grid">
+      <div>
+        <p>Strategic and results-driven professional with deep experience in Product Strategy, Pricing & Monetisation, and GTM Execution in high-growth SaaS ecosystems. Consistent track record of synthesising market and technology trends into investment cases, monetisation models, and GTM collaterals.</p>
+        <br>
+        <p>Proven ability to navigate complex and ambiguous problems through a collaborative, high-ownership approach in matrixed environments, driving initiatives that have delivered multi-million-dollar ARR.</p>
+      </div>
+      <div>
+        <div class="stat-grid">
+          <div class="stat"><div class="num">7+</div><div class="label">Years Exp.</div></div>
+          <div class="stat"><div class="num">$28M+</div><div class="label">ARR Impact</div></div>
+          <div class="stat"><div class="num">50K+</div><div class="label">Customers Migrated</div></div>
+          <div class="stat"><div class="num">5x</div><div class="label">Campaign ROI</div></div>
+          <div class="stat"><div class="num">14</div><div class="label">Cross-func Team</div></div>
+          <div class="stat"><div class="num">Top 10%</div><div class="label">Rating</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--card)">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title">Core Competencies</h2>
+    <p class="section-subtitle">Where strategy meets execution.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Strategy</h3>
+        <ul>
+          <li>Product & GTM Strategy</li>
+          <li>Pricing & Monetisation</li>
+          <li>Long-Range Planning</li>
+          <li>TAM/SAM Analysis</li>
+          <li>Product-Led Growth (PLG)</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Analysis</h3>
+        <ul>
+          <li>Financial Modelling</li>
+          <li>ROI Modelling</li>
+          <li>Comparative Financial Analysis</li>
+          <li>Business Research</li>
+          <li>Market Trend Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Execution</h3>
+        <ul>
+          <li>Executive Storyboarding</li>
+          <li>GTM Collateral</li>
+          <li>Sales Enablement</li>
+          <li>Cross-functional Leadership</li>
+          <li>Program Management</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <ul>
+          <li>SQL</li>
+          <li>Tableau & PowerBI</li>
+          <li>Google Suite</li>
+          <li>Appcues</li>
+          <li>CRM Tools</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title">Professional Experience</h2>
+    <p class="section-subtitle">Building revenue engines at scale.</p>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <h3>Pricing & Monetisation Manager — Product Strategy</h3>
+        <div class="meta">Freshworks &middot; Oct 2023 – Present</div>
+        <span class="impact-tag">~$25M ARR Impact</span>
+        <ul>
+          <li>Owned full product strategy for Freddy AI Agent — assessed market opportunity, benchmarked Tier-1 competitors (Agentforce, Intercom, Hubspot); designed scalable pricing architecture; delivered executive investment case positioning Freddy AI Agent for ~$10M ARR.</li>
+          <li>Built 3-year financial forecast with adoption curves and cost-to-serve modelling; developed an interactive ROI Calculator to influence CXO discussions and accelerate deal cycles globally.</li>
+          <li>Led CX Platform pricing & packaging strategy for 50K+ customer migration — shaped differentiated positioning and value-based pricing with promotional offers.</li>
+          <li>Restructured chatbot session policy and implemented programmatic escalator clauses across products — combined contribution of ~$13M ARR in FY'25.</li>
+          <li>Recommended shift from agent-based to outcome-based pricing, adopted into the corporate Long-Range Plan (LRP).</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <h3>Staff Program Manager — GTM Strategy & Operations</h3>
+        <div class="meta">Freshworks &middot; Sept 2020 – Sept 2023</div>
+        <span class="impact-tag">~$13M+ Pipeline & Revenue</span>
+        <ul>
+          <li>Led end-to-end GTM strategy for FW CRM as a Focus Product — defined TAM, segmented industries, built a $3.2M ARR pipeline in four months with a cross-functional team of 14.</li>
+          <li>Designed $75K demand generation campaigns delivering 300+ qualified leads with 35% lead-to-pipeline conversion.</li>
+          <li>Built from-scratch GTM programme targeting Indian startups — acquired 45+ new logos in two quarters generating $600K ARR.</li>
+          <li>Spearheaded ABM for 50+ key APMEA accounts with $100K budget, delivering $2M ARR pipeline and 30% cross-sell uplift.</li>
+          <li>Created persona-driven value propositions, battlecards, and executive-grade sales playbooks shifting messaging from features to outcomes.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <h3>Assistant Systems Engineer</h3>
+        <div class="meta">Tata Consultancy Services &middot; Sept 2016 – May 2018</div>
+        <ul>
+          <li>Built BI-powered Supply Data Management App for a UK retail client — reduced data processing latency by 75%.</li>
+          <li>Pioneered Scrum adoption to improve delivery velocity and client engagement.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education" style="background:var(--card)">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title">Education</h2>
+    <p class="section-subtitle">Strong academic foundations.</p>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h3>PGDM — Sales & Marketing</h3>
+        <div class="school">S.P. Jain Institute of Management & Research</div>
+        <div class="detail">GPA: 3.03 / 4.0 &middot; 2018–2020</div>
+      </div>
+      <div class="edu-card">
+        <h3>B.Tech — Computer Science & Engineering</h3>
+        <div class="school">Heritage Institute of Technology</div>
+        <div class="detail">GPA: 8.89 / 10 &middot; 2012–2016</div>
+      </div>
+      <div class="edu-card">
+        <h3>ISC (Class XII) — Science</h3>
+        <div class="school">94.75% &middot; 2012</div>
+      </div>
+      <div class="edu-card">
+        <h3>ICSE (Class X)</h3>
+        <div class="school">96.6% — School Rank 1 &middot; 2010</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title">Achievements</h2>
+    <div class="achievements">
+      <div class="ach">Recognised for <strong>Excellence in GTM Strategic Initiatives</strong> at Freshworks.</div>
+      <div class="ach">Consistently rated <strong>'Exceeds Expectations' / 'Champion'</strong> — Top 10% of the team across annual rating cycles.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="divider" style="margin-left:auto;margin-right:auto"></div>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-info">
+      <p>+91 7518832390 &nbsp;&middot;&nbsp; <a href="mailto:pgp18.sneha@spjimr.org">pgp18.sneha@spjimr.org</a> &nbsp;&middot;&nbsp; <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Sneha Ghosh. All rights reserved.</footer>
+
+</body>
+</html>
