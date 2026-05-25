@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sneha Ghosh — Strategy & Growth</title>
+<title>Sneha Ghosh — Pricing, GTM & Revenue Strategy</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -38,18 +38,26 @@ section{padding:5rem 2rem}
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
 .about-grid p{color:var(--muted);font-size:.95rem}
-.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.5rem}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.2rem;margin-top:1.5rem}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center}
 .stat .num{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.stat .label{font-size:.75rem;color:var(--muted);margin-top:.3rem;text-transform:uppercase;letter-spacing:.05em}
+.stat .label{font-size:.75rem;color:var(--muted);margin-top:.3rem;text-transform:uppercase;letter-spacing:.05em;line-height:1.4}
 
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.skill-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
-.skill-card h3{font-size:1rem;margin-bottom:.8rem;color:#fff}
-.skill-card ul{list-style:none;padding:0}
-.skill-card li{font-size:.85rem;color:var(--muted);padding:.25rem 0;position:relative;padding-left:1rem}
-.skill-card li::before{content:'';position:absolute;left:0;top:.6rem;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+/* COMPETENCIES */
+.competency-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.competency-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.8rem}
+.competency-card h3{font-size:1.05rem;color:#fff;margin-bottom:.8rem}
+.competency-card p{font-size:.88rem;color:var(--muted);line-height:1.7}
+
+/* CASE STUDIES */
+.work-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem}
+.case-tag{display:inline-block;background:rgba(0,201,167,.12);color:var(--accent2);font-size:.75rem;font-weight:600;padding:.25rem .7rem;border-radius:4px;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.06em}
+.case-card h3{font-size:1.1rem;color:#fff;margin-bottom:1.2rem;line-height:1.4}
+.case-section{margin-bottom:1rem}
+.case-section:last-child{margin-bottom:0}
+.case-section strong{font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;display:block;margin-bottom:.35rem;font-weight:600}
+.case-section p{font-size:.88rem;color:var(--muted);line-height:1.7}
 
 /* EXPERIENCE */
 .timeline{position:relative;padding-left:2rem}
@@ -70,21 +78,29 @@ section{padding:5rem 2rem}
 .edu-card .school{font-size:.85rem;color:var(--accent2)}
 .edu-card .detail{font-size:.8rem;color:var(--muted);margin-top:.3rem}
 
-/* ACHIEVEMENTS */
-.achievements{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-.ach{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.3rem;font-size:.9rem;color:var(--muted)}
+/* AWARDS */
+.award-list{display:flex;flex-direction:column;gap:1.2rem}
+.award-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1rem;align-items:flex-start}
+.award-icon{font-size:1.5rem;flex-shrink:0;margin-top:.1rem}
+.award-content h4{font-size:.95rem;color:#fff;margin-bottom:.4rem}
+.award-content p{font-size:.85rem;color:var(--muted)}
 
 /* CONTACT */
 .contact-section{text-align:center}
 .contact-info{margin-top:1.5rem;font-size:.95rem;color:var(--muted)}
 .contact-info a{font-weight:500}
+.btn-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+.btn-cta{display:inline-block;padding:.75rem 2rem;border:1px solid var(--accent);border-radius:6px;font-weight:600;color:var(--accent);transition:all .25s}
+.btn-cta:hover{background:var(--accent);color:#fff}
+.btn-cv{display:inline-block;padding:.75rem 2rem;border:1px solid var(--accent2);border-radius:6px;font-weight:600;color:var(--accent2);transition:all .25s}
+.btn-cv:hover{background:var(--accent2);color:#fff}
 
 /* FOOTER */
 footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border)}
 
 @media(max-width:768px){
   .hero h1{font-size:2rem}
-  .about-grid,.achievements{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
   .stat-grid{grid-template-columns:repeat(2,1fr)}
   nav .links a{margin-left:1rem;font-size:.75rem}
 }
@@ -98,6 +114,7 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
     <div class="links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
@@ -108,7 +125,7 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
 <section class="hero">
   <div>
     <h1>Sneha <span>Ghosh</span></h1>
-    <p class="tagline">Strategy & Growth leader with 7+ years driving multi-million dollar ARR through Product Strategy, Pricing & Monetisation, and GTM Execution in high-growth SaaS ecosystems.</p>
+    <p class="tagline">I turn product decisions into revenue outcomes — pricing architecture, PLG, and GTM strategy for high-growth SaaS.</p>
     <a href="#contact" class="cta">Get in Touch</a>
   </div>
 </section>
@@ -120,18 +137,15 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
     <p class="section-subtitle">Turning market complexity into revenue clarity.</p>
     <div class="about-grid">
       <div>
-        <p>Strategic and results-driven professional with deep experience in Product Strategy, Pricing & Monetisation, and GTM Execution in high-growth SaaS ecosystems. Consistent track record of synthesising market and technology trends into investment cases, monetisation models, and GTM collaterals.</p>
-        <br>
-        <p>Proven ability to navigate complex and ambiguous problems through a collaborative, high-ownership approach in matrixed environments, driving initiatives that have delivered multi-million-dollar ARR.</p>
+        <p>Strategic and results-driven professional with deep experience in Product Strategy, Pricing &amp; Monetisation, and GTM Execution. I've owned the full stack — from building investment cases and pricing architectures to running cross-functional GTM programmes and closing monetisation gaps. My work at Freshworks has delivered over $28M in ARR impact across AI products, platform launches, and policy redesign.</p>
       </div>
       <div>
         <div class="stat-grid">
-          <div class="stat"><div class="num">7+</div><div class="label">Years Exp.</div></div>
-          <div class="stat"><div class="num">$28M+</div><div class="label">ARR Impact</div></div>
-          <div class="stat"><div class="num">50K+</div><div class="label">Customers Migrated</div></div>
-          <div class="stat"><div class="num">5x</div><div class="label">Campaign ROI</div></div>
-          <div class="stat"><div class="num">14</div><div class="label">Cross-func Team</div></div>
-          <div class="stat"><div class="num">Top 10%</div><div class="label">Rating</div></div>
+          <div class="stat"><div class="num">$28M+</div><div class="label">ARR — across pricing redesign, AI Agent launch &amp; GTM programmes</div></div>
+          <div class="stat"><div class="num">50K+</div><div class="label">Customers migrated to new CX platform</div></div>
+          <div class="stat"><div class="num">5x</div><div class="label">Campaign ROI on targeted ABM programmes</div></div>
+          <div class="stat"><div class="num">14</div><div class="label">Cross-functional team led for India CRM market entry</div></div>
+          <div class="stat"><div class="num">2x</div><div class="label">Projected revenue hit within 2 quarters of Freddy AI Agent launch</div></div>
         </div>
       </div>
     </div>
@@ -143,52 +157,86 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
     <div class="divider"></div>
     <h2 class="section-title">Core Competencies</h2>
     <p class="section-subtitle">Where strategy meets execution.</p>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Strategy</h3>
-        <ul>
-          <li>Product & GTM Strategy</li>
-          <li>Pricing & Monetisation</li>
-          <li>Long-Range Planning</li>
-          <li>TAM/SAM Analysis</li>
-          <li>Product-Led Growth (PLG)</li>
-        </ul>
+    <div class="competency-grid">
+      <div class="competency-card">
+        <h3>Pricing &amp; Monetisation</h3>
+        <p>I design pricing architectures, model revenue scenarios, and identify monetisation leakage. I've built outcome-based pricing proposals, SKU constructs, and policy redesigns that have contributed $25M+ in ARR at Freshworks.</p>
       </div>
-      <div class="skill-card">
-        <h3>Analysis</h3>
-        <ul>
-          <li>Financial Modelling</li>
-          <li>ROI Modelling</li>
-          <li>Comparative Financial Analysis</li>
-          <li>Business Research</li>
-          <li>Market Trend Analysis</li>
-        </ul>
+      <div class="competency-card">
+        <h3>GTM Strategy &amp; Operations</h3>
+        <p>I build go-to-market engines from scratch — TAM definition, pipeline modelling, sales playbooks, and cross-functional programme management. I've led market entries, ABM programmes, and PLG experiments across India and APAC.</p>
       </div>
-      <div class="skill-card">
-        <h3>Execution</h3>
-        <ul>
-          <li>Executive Storyboarding</li>
-          <li>GTM Collateral</li>
-          <li>Sales Enablement</li>
-          <li>Cross-functional Leadership</li>
-          <li>Program Management</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Tools</h3>
-        <ul>
-          <li>SQL</li>
-          <li>Tableau & PowerBI</li>
-          <li>Google Suite</li>
-          <li>Appcues</li>
-          <li>CRM Tools</li>
-        </ul>
+      <div class="competency-card">
+        <h3>Financial Modelling &amp; Tooling</h3>
+        <p>I translate strategy into numbers. I build 3-year financial forecasts, ROI calculators, and KPI dashboards that executives actually use — my AI Agent ROI Calculator is now a standard asset in enterprise deal cycles globally at Freshworks.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="experience">
+<section id="work">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title">Selected Work</h2>
+    <p class="section-subtitle">End-to-end ownership from problem to revenue impact.</p>
+    <div class="work-grid">
+
+      <div class="case-card">
+        <div class="case-tag">Pricing &amp; Monetisation</div>
+        <h3>Pricing a net-new AI product from zero — Freddy AI Agent</h3>
+        <div class="case-section">
+          <strong>Challenge</strong>
+          <p>Freshworks was launching an AI Agent product into a crowded market (competing with Agentforce, Intercom, HubSpot) with no established pricing precedent for agentic AI and no internal playbook to draw from.</p>
+        </div>
+        <div class="case-section">
+          <strong>Approach</strong>
+          <p>I owned the full lifecycle — evaluated session-based, consumption, and outcome-based models; defined SKU constructs and entitlement logic; benchmarked Tier-1 competitors on pricing structure, packaging tiers, and discount posture; built a 3-year financial model with adoption curves and cost-to-serve sensitivity analysis; developed an interactive ROI Calculator that models customer-specific value across deflection, productivity, and cost savings; authored all GTM collaterals and led company-wide enablement across Sales, CS, and partners globally.</p>
+        </div>
+        <div class="case-section">
+          <strong>Result</strong>
+          <p>Investment case approved by executive leadership. Freddy AI Agent positioned for ~$10M ARR with 4x growth in session volumes. 2x projected revenue achieved within two quarters. ROI Calculator adopted as a standard asset in CXO-level enterprise deal cycles globally.</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-tag">Revenue Operations &amp; Monetisation Policy</div>
+        <h3>Closing a $13M monetisation gap through policy redesign</h3>
+        <div class="case-section">
+          <strong>Challenge</strong>
+          <p>Freshworks had two silent revenue leaks: chatbot usage that had been offered for free was not converting to paid, and high discounting across top products was eroding ARR without a governance mechanism.</p>
+        </div>
+        <div class="case-section">
+          <strong>Approach</strong>
+          <p>I identified the gaps through policy analysis and cross-functional data reviews. I redesigned chatbot session entitlements to convert previously free usage into a monetised tier with clear segment-level thresholds. Separately, I designed and implemented programmatic escalator clauses across the product portfolio — creating automatic revenue recovery mechanisms tied to usage growth — and drove execution in partnership with RevOps and Finance.</p>
+        </div>
+        <div class="case-section">
+          <strong>Result</strong>
+          <p>~$13M ARR contribution in FY'25. Both initiatives are now embedded in standard commercial and renewal processes. Recognised with the Gold Award for Above &amp; Beyond Performance in Monetisation Initiatives (FY'25).</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-tag">GTM Strategy &amp; Operations</div>
+        <h3>Building a $1.2M pipeline in 4 months — India CRM market entry</h3>
+        <div class="case-section">
+          <strong>Challenge</strong>
+          <p>FW CRM was designated a focus product in India with no existing market playbook, no dedicated team, and no pipeline. I was the sole owner of strategy, operations, marketing, and BD — effectively a one-person founder for this GTM motion.</p>
+        </div>
+        <div class="case-section">
+          <strong>Approach</strong>
+          <p>Mapped the Indian CRM market, defined TAM across high-growth verticals (FinTech, EdTech, Travel, Healthcare), prioritised segments by technology adoption readiness and competitive whitespace, and built a revenue forecast model. Recruited and program-managed a cross-functional team of 14 across Product, Sales, and PMM. Designed industry-specific sales playbooks that shifted messaging from features to business outcomes; built persona-driven value propositions, battlecards, and executive-grade decks for mid-market buyers. Owned pipeline generation end-to-end across partner interlocks, product-led sales plays, and integrated marketing campaigns.</p>
+        </div>
+        <div class="case-section">
+          <strong>Result</strong>
+          <p>$1.2M ARR pipeline in 4 months. Programme served as the template for subsequent focus-product GTM motions at Freshworks. Recognised with the Excellence Award for GTM Strategic Programs (FY'23).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--card)">
   <div class="container">
     <div class="divider"></div>
     <h2 class="section-title">Professional Experience</h2>
@@ -196,27 +244,39 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
     <div class="timeline">
 
       <div class="tl-item">
-        <h3>Pricing & Monetisation Manager — Product Strategy</h3>
+        <h3>Pricing &amp; Monetisation Manager — Product Strategy</h3>
         <div class="meta">Freshworks &middot; Oct 2023 – Present</div>
-        <span class="impact-tag">~$25M ARR Impact</span>
+        <span class="impact-tag">~$28M+ ARR Impact</span>
         <ul>
           <li>Owned full product strategy for Freddy AI Agent — assessed market opportunity, benchmarked Tier-1 competitors (Agentforce, Intercom, Hubspot); designed scalable pricing architecture; delivered executive investment case positioning Freddy AI Agent for ~$10M ARR.</li>
           <li>Built 3-year financial forecast with adoption curves and cost-to-serve modelling; developed an interactive ROI Calculator to influence CXO discussions and accelerate deal cycles globally.</li>
-          <li>Led CX Platform pricing & packaging strategy for 50K+ customer migration — shaped differentiated positioning and value-based pricing with promotional offers.</li>
+          <li>Led CX Platform pricing &amp; packaging strategy for 50K+ customer migration — shaped differentiated positioning and value-based pricing with promotional offers.</li>
           <li>Restructured chatbot session policy and implemented programmatic escalator clauses across products — combined contribution of ~$13M ARR in FY'25.</li>
           <li>Recommended shift from agent-based to outcome-based pricing, adopted into the corporate Long-Range Plan (LRP).</li>
         </ul>
       </div>
 
       <div class="tl-item">
-        <h3>Staff Program Manager — GTM Strategy & Operations</h3>
+        <h3>Product Manager — Product-Led Growth</h3>
+        <div class="meta">Freshworks &middot; Sept 2020 – Sept 2021</div>
+        <ul>
+          <li>Owned PLG initiatives for Freshworks CRM and Freshsales — redesigned onboarding flows using behavioural data from Appcues and Heap to reduce drop-off and drive early feature adoption; improved modal CTRs by 11% (FW CRM) and 8% (Freshsales).</li>
+          <li>Conducted competitive research and user behaviour analysis to identify drop-off points and highlight core features in-product.</li>
+          <li>Introduced non-intrusive nudges and quick-help features increasing feature utilisation by 15%.</li>
+          <li>Created customer profiles and badges based on feature usage to drive early adoption of advanced features.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <h3>Staff Program Manager — GTM Strategy &amp; Operations</h3>
         <div class="meta">Freshworks &middot; Sept 2020 – Sept 2023</div>
-        <span class="impact-tag">~$13M+ Pipeline & Revenue</span>
+        <span class="impact-tag">~$13M+ Pipeline &amp; Revenue</span>
         <ul>
           <li>Led end-to-end GTM strategy for FW CRM as a Focus Product — defined TAM, segmented industries, built a $3.2M ARR pipeline in four months with a cross-functional team of 14.</li>
           <li>Designed $75K demand generation campaigns delivering 300+ qualified leads with 35% lead-to-pipeline conversion.</li>
           <li>Built from-scratch GTM programme targeting Indian startups — acquired 45+ new logos in two quarters generating $600K ARR.</li>
           <li>Spearheaded ABM for 50+ key APMEA accounts with $100K budget, delivering $2M ARR pipeline and 30% cross-sell uplift.</li>
+          <li>Led a cross-functional, cross-geography "Big Bets" programme to identify and accelerate enterprise account expansion across APJ — mapped opportunities using account-level analytics, designed tailored GTM plays per account driving upsell and cross-sell. Result: 5 enterprise deals (~$250K ARR each), 15+ deals (~$100K ARR each), $200K ARR qualified pipeline in 1 quarter, and 40% expansion in enterprise account coverage.</li>
           <li>Created persona-driven value propositions, battlecards, and executive-grade sales playbooks shifting messaging from features to outcomes.</li>
         </ul>
       </div>
@@ -234,19 +294,19 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
   </div>
 </section>
 
-<section id="education" style="background:var(--card)">
+<section id="education">
   <div class="container">
     <div class="divider"></div>
     <h2 class="section-title">Education</h2>
     <p class="section-subtitle">Strong academic foundations.</p>
     <div class="edu-grid">
       <div class="edu-card">
-        <h3>PGDM — Sales & Marketing</h3>
-        <div class="school">S.P. Jain Institute of Management & Research</div>
+        <h3>PGDM — Sales &amp; Marketing</h3>
+        <div class="school">S.P. Jain Institute of Management &amp; Research</div>
         <div class="detail">GPA: 3.03 / 4.0 &middot; 2018–2020</div>
       </div>
       <div class="edu-card">
-        <h3>B.Tech — Computer Science & Engineering</h3>
+        <h3>B.Tech — Computer Science &amp; Engineering</h3>
         <div class="school">Heritage Institute of Technology</div>
         <div class="detail">GPA: 8.89 / 10 &middot; 2012–2016</div>
       </div>
@@ -262,13 +322,33 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
   </div>
 </section>
 
-<section id="achievements">
+<section id="achievements" style="background:var(--card)">
   <div class="container">
     <div class="divider"></div>
-    <h2 class="section-title">Achievements</h2>
-    <div class="achievements">
-      <div class="ach">Recognised for <strong>Excellence in GTM Strategic Initiatives</strong> at Freshworks.</div>
-      <div class="ach">Consistently rated <strong>'Exceeds Expectations' / 'Champion'</strong> — Top 10% of the team across annual rating cycles.</div>
+    <h2 class="section-title">Awards &amp; Recognition</h2>
+    <p class="section-subtitle">Recognised for measurable impact and cross-functional leadership.</p>
+    <div class="award-list">
+      <div class="award-item">
+        <div class="award-icon">🏆</div>
+        <div class="award-content">
+          <h4>Gold Award — Above &amp; Beyond Performance | Freshworks FY'25</h4>
+          <p>For monetisation initiatives including Freddy AI Agent pricing and session policy redesign — $25M+ ARR impact.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">🏆</div>
+        <div class="award-content">
+          <h4>Excellence Award — GTM Strategic Programs | Freshworks FY'23</h4>
+          <p>For India CRM market entry and Digital Natives GTM programme — $1.8M+ ARR pipeline impact.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">⭐</div>
+        <div class="award-content">
+          <h4>Top 10% — 'Champion' / 'Exceeds Expectations'</h4>
+          <p>Consistently rated in the top decile of the team across all annual performance cycles.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -278,7 +358,11 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
     <div class="divider" style="margin-left:auto;margin-right:auto"></div>
     <h2 class="section-title">Let's Connect</h2>
     <div class="contact-info">
-      <p>+91 7518832390 &nbsp;&middot;&nbsp; <a href="mailto:pgp18.sneha@spjimr.org">pgp18.sneha@spjimr.org</a> &nbsp;&middot;&nbsp; <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
+      <p><a href="mailto:pgp18.sneha@spjimr.org">pgp18.sneha@spjimr.org</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/sneha-ghosh-sg/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    </div>
+    <div class="btn-group">
+      <a href="#contact" class="btn-cta">Get in Touch</a>
+      <a href="#" class="btn-cv">Download CV</a>
     </div>
   </div>
 </section>
