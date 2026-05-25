@@ -4,113 +4,176 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sneha Ghosh — Pricing, GTM & Revenue Strategy</title>
+<meta name="description" content="Sneha Ghosh — Pricing, monetisation, and GTM strategy for high-growth SaaS. $28M+ ARR impact at Freshworks across AI Agent launch, PLG, and platform pricing.">
+<meta property="og:title" content="Sneha Ghosh — Pricing & GTM Strategy">
+<meta property="og:description" content="Pricing, monetisation, and GTM strategy for high-growth SaaS. $28M+ ARR impact at Freshworks.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sneha Ghosh — Pricing & GTM Strategy">
+<meta name="twitter:description" content="Pricing, monetisation, and GTM strategy for high-growth SaaS. $28M+ ARR impact at Freshworks.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%236c63ff'/><text font-size='52' font-family='Inter,sans-serif' fill='white' x='50' y='68' text-anchor='middle' font-weight='700'>SG</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ── RESET & TOKENS ── */
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0f0f0f;--card:#1a1a1a;--accent:#6c63ff;--accent2:#00c9a7;--text:#e0e0e0;--muted:#888;--border:#2a2a2a}
+:root{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --accent:#6c63ff;
+  --accent2:#00c9a7;
+  --text:#e0e0e0;
+  --muted:#a0a0a0;
+  --border:#2a2a2a;
+}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
 a{color:var(--accent);text-decoration:none;transition:color .2s}
 a:hover{color:var(--accent2)}
 
-/* NAV */
-nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,.85);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid var(--border);padding:0 2rem}
+/* ── SKIP LINK ── */
+.skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{position:fixed;top:1rem;left:1rem;width:auto;height:auto;padding:.5rem 1rem;background:var(--accent);color:#fff;border-radius:6px;z-index:9999;font-weight:600}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,.9);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid var(--border);padding:0 2rem}
 nav .inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;height:60px}
 nav .logo{font-weight:700;font-size:1.1rem;color:#fff}
 nav .links a{margin-left:1.8rem;font-size:.85rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;transition:color .2s}
 nav .links a:hover{color:#fff}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem}
-.hero h1{font-size:3.2rem;font-weight:700;color:#fff;margin-bottom:.6rem}
-.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p.tagline{font-size:1.15rem;color:var(--muted);max-width:680px;margin:0 auto 2rem}
-.hero .cta{display:inline-block;padding:.75rem 2rem;border:1px solid var(--accent);border-radius:6px;font-weight:600;color:var(--accent);transition:all .25s}
-.hero .cta:hover{background:var(--accent);color:#fff}
+/* hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.4rem}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* SECTIONS */
+@media(max-width:640px){
+  .hamburger{display:flex}
+  nav .links{
+    display:none;
+    position:fixed;top:60px;left:0;right:0;
+    background:rgba(15,15,15,.97);
+    flex-direction:column;align-items:center;gap:0;
+    border-bottom:1px solid var(--border);
+    padding:1rem 0;
+  }
+  nav .links.open{display:flex}
+  nav .links a{margin:0;padding:.75rem 0;font-size:.9rem}
+}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem}
+.hero h1{font-size:clamp(2rem,8vw,3.2rem);font-weight:700;color:#fff;margin-bottom:.6rem}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.tagline{font-size:1.1rem;color:var(--muted);max-width:680px;margin:0 auto 2rem}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.hero .cta-primary{display:inline-block;padding:.75rem 2rem;background:var(--accent);border-radius:6px;font-weight:600;color:#fff;transition:opacity .25s}
+.hero .cta-primary:hover{opacity:.85;color:#fff}
+.hero .cta-secondary{display:inline-block;padding:.75rem 2rem;border:1px solid var(--border);border-radius:6px;font-weight:500;color:var(--muted);transition:all .25s}
+.hero .cta-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.scroll-hint{font-size:.75rem;color:var(--border);letter-spacing:.1em;text-transform:uppercase;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ── SECTIONS ── */
 section{padding:5rem 2rem}
 .container{max-width:1000px;margin:auto}
 .section-title{font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:.4rem}
 .section-subtitle{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
 .divider{width:50px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;margin-bottom:2rem}
 
-/* ABOUT */
+/* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
 .about-grid p{color:var(--muted);font-size:.95rem}
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.2rem;margin-top:1.5rem}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center}
-.stat .num{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .num{font-size:1.8rem;font-weight:700;color:var(--accent)}
 .stat .label{font-size:.75rem;color:var(--muted);margin-top:.3rem;text-transform:uppercase;letter-spacing:.05em;line-height:1.4}
 
-/* COMPETENCIES */
+/* ── COMPETENCIES ── */
 .competency-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.competency-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.8rem}
+.competency-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.8rem;transition:transform .2s,border-color .2s}
+.competency-card:hover{transform:translateY(-2px);border-color:var(--accent)}
 .competency-card h3{font-size:1.05rem;color:#fff;margin-bottom:.8rem}
 .competency-card p{font-size:.88rem;color:var(--muted);line-height:1.7}
 
-/* CASE STUDIES */
+/* ── CASE STUDIES ── */
 .work-grid{display:grid;grid-template-columns:1fr;gap:2rem}
-.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:transform .2s,border-color .2s}
+.case-card:hover{transform:translateY(-2px);border-color:var(--accent)}
 .case-tag{display:inline-block;background:rgba(0,201,167,.12);color:var(--accent2);font-size:.75rem;font-weight:600;padding:.25rem .7rem;border-radius:4px;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.06em}
 .case-card h3{font-size:1.1rem;color:#fff;margin-bottom:1.2rem;line-height:1.4}
 .case-section{margin-bottom:1rem}
 .case-section:last-child{margin-bottom:0}
-.case-section strong{font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;display:block;margin-bottom:.35rem;font-weight:600}
+.case-section strong{font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;display:block;margin-bottom:.4rem;font-weight:600}
 .case-section p{font-size:.88rem;color:var(--muted);line-height:1.7}
+.case-section ul{padding-left:1.2rem;margin:0;list-style:disc}
+.case-section ul li{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:.3rem}
 
-/* EXPERIENCE */
+/* ── EXPERIENCE ── */
 .timeline{position:relative;padding-left:2rem}
 .timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--border)}
 .tl-item{position:relative;margin-bottom:2.5rem}
-.tl-item::before{content:'';position:absolute;left:-2rem;top:.45rem;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl-item::before{content:'';position:absolute;left:-2.45rem;top:.45rem;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
 .tl-item h3{font-size:1.05rem;color:#fff;margin-bottom:.15rem}
 .tl-item .meta{font-size:.8rem;color:var(--accent2);margin-bottom:.6rem;font-weight:500}
 .tl-item p,.tl-item ul{font-size:.88rem;color:var(--muted)}
-.tl-item ul{padding-left:1.2rem;margin-top:.4rem}
+.tl-item ul{padding-left:1.2rem;margin-top:.4rem;list-style:disc}
 .tl-item li{margin-bottom:.35rem}
 .impact-tag{display:inline-block;background:rgba(108,99,255,.15);color:var(--accent);font-size:.75rem;font-weight:600;padding:.2rem .6rem;border-radius:4px;margin-bottom:.5rem}
 
-/* EDUCATION */
+/* ── EDUCATION ── */
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
-.edu-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.3rem}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.3rem;transition:transform .2s,border-color .2s}
+.edu-card:hover{transform:translateY(-2px);border-color:var(--accent)}
 .edu-card h3{font-size:.95rem;color:#fff;margin-bottom:.2rem}
 .edu-card .school{font-size:.85rem;color:var(--accent2)}
 .edu-card .detail{font-size:.8rem;color:var(--muted);margin-top:.3rem}
 
-/* AWARDS */
+/* ── AWARDS ── */
 .award-list{display:flex;flex-direction:column;gap:1.2rem}
-.award-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1rem;align-items:flex-start}
-.award-icon{font-size:1.5rem;flex-shrink:0;margin-top:.1rem}
+.award-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1rem;align-items:flex-start;transition:transform .2s,border-color .2s}
+.award-item:hover{transform:translateY(-2px);border-color:var(--accent)}
+.award-icon{flex-shrink:0;margin-top:.15rem;color:var(--accent)}
 .award-content h4{font-size:.95rem;color:#fff;margin-bottom:.4rem}
 .award-content p{font-size:.85rem;color:var(--muted)}
 
-/* CONTACT */
+/* ── CONTACT ── */
 .contact-section{text-align:center}
 .contact-info{margin-top:1.5rem;font-size:.95rem;color:var(--muted)}
 .contact-info a{font-weight:500}
 .btn-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
-.btn-cta{display:inline-block;padding:.75rem 2rem;border:1px solid var(--accent);border-radius:6px;font-weight:600;color:var(--accent);transition:all .25s}
-.btn-cta:hover{background:var(--accent);color:#fff}
-.btn-cv{display:inline-block;padding:.75rem 2rem;border:1px solid var(--accent2);border-radius:6px;font-weight:600;color:var(--accent2);transition:all .25s}
-.btn-cv:hover{background:var(--accent2);color:#fff}
+.btn-cta{display:inline-block;padding:.75rem 2rem;background:var(--accent);border-radius:6px;font-weight:600;color:#fff;transition:opacity .25s}
+.btn-cta:hover{opacity:.85;color:#fff}
+.btn-cv{display:inline-block;padding:.75rem 2rem;border:1px solid var(--border);border-radius:6px;font-weight:500;color:var(--muted);transition:all .25s}
+.btn-cv:hover{border-color:var(--accent2);color:var(--accent2)}
 
-/* FOOTER */
-footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border)}
+/* ── FOOTER ── */
+footer{text-align:center;padding:2rem;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border)}
+footer .footer-links{display:flex;gap:1.2rem;justify-content:center;margin-bottom:.75rem}
+footer .footer-links a{display:flex;align-items:center;gap:.4rem;color:var(--muted);font-size:.82rem;transition:color .2s}
+footer .footer-links a:hover{color:var(--accent)}
+footer .footer-links svg{width:16px;height:16px}
 
+/* ── MOBILE ── */
 @media(max-width:768px){
-  .hero h1{font-size:2rem}
+  section{padding:3.5rem 1.25rem}
+  .hero{padding:5rem 1.25rem 3rem}
   .about-grid{grid-template-columns:1fr}
   .stat-grid{grid-template-columns:repeat(2,1fr)}
-  nav .links a{margin-left:1rem;font-size:.75rem}
 }
 </style>
 </head>
 <body>
 
-<nav>
+<a href="#about" class="skip">Skip to content</a>
+
+<nav aria-label="Primary">
   <div class="inner">
     <div class="logo">SG</div>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('open');this.setAttribute('aria-expanded',this.classList.contains('open'));document.querySelector('nav .links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
     <div class="links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -125,27 +188,31 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
 <section class="hero">
   <div>
     <h1>Sneha <span>Ghosh</span></h1>
-    <p class="tagline">I turn product decisions into revenue outcomes — pricing architecture, PLG, and GTM strategy for high-growth SaaS.</p>
-    <a href="#contact" class="cta">Get in Touch</a>
+    <p class="tagline">$28M+ in ARR impact at Freshworks — across AI Agent pricing, PLG experiments, and GTM strategy for high-growth SaaS.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="cta-primary">Get in Touch</a>
+      <a href="#work" class="cta-secondary">View Work</a>
+    </div>
+    <div class="scroll-hint">&#8595; scroll</div>
   </div>
 </section>
 
 <section id="about">
   <div class="container">
-    <div class="divider"></div>
-    <h2 class="section-title">About Me</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <h2 class="section-title">About</h2>
     <p class="section-subtitle">Turning market complexity into revenue clarity.</p>
     <div class="about-grid">
       <div>
-        <p>Strategic and results-driven professional with deep experience in Product Strategy, Pricing &amp; Monetisation, and GTM Execution. I've owned the full stack — from building investment cases and pricing architectures to running cross-functional GTM programmes and closing monetisation gaps. My work at Freshworks has delivered over $28M in ARR impact across AI products, platform launches, and policy redesign.</p>
+        <p>7+ years across product strategy, pricing and monetisation, and GTM execution in high-growth SaaS. At Freshworks, I've worked across the full arc — building investment cases and pricing architectures, running GTM programmes, and closing monetisation gaps. The work has delivered over $28M in ARR impact across AI Agent launch, platform pricing, PLG experiments, and policy redesign.</p>
       </div>
       <div>
         <div class="stat-grid">
-          <div class="stat"><div class="num">$28M+</div><div class="label">ARR — across pricing redesign, AI Agent launch &amp; GTM programmes</div></div>
+          <div class="stat"><div class="num">$28M+</div><div class="label">ARR impact across pricing, PLG &amp; GTM</div></div>
           <div class="stat"><div class="num">50K+</div><div class="label">Customers migrated to new CX platform</div></div>
           <div class="stat"><div class="num">5x</div><div class="label">Campaign ROI on targeted ABM programmes</div></div>
-          <div class="stat"><div class="num">14</div><div class="label">Cross-functional team led for India CRM market entry</div></div>
-          <div class="stat"><div class="num">2x</div><div class="label">Projected revenue hit within 2 quarters of Freddy AI Agent launch</div></div>
+          <div class="stat"><div class="num">14</div><div class="label">Person cross-functional team for India CRM entry</div></div>
+          <div class="stat"><div class="num">2x</div><div class="label">Projected revenue hit within 2 quarters of AI Agent launch</div></div>
         </div>
       </div>
     </div>
@@ -154,21 +221,21 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
 
 <section id="skills" style="background:var(--card)">
   <div class="container">
-    <div class="divider"></div>
+    <div class="divider" aria-hidden="true"></div>
     <h2 class="section-title">Core Competencies</h2>
     <p class="section-subtitle">Where strategy meets execution.</p>
     <div class="competency-grid">
       <div class="competency-card">
         <h3>Pricing &amp; Monetisation</h3>
-        <p>I design pricing architectures, model revenue scenarios, and identify monetisation leakage. I've built outcome-based pricing proposals, SKU constructs, and policy redesigns that have contributed $25M+ in ARR at Freshworks.</p>
+        <p>Designing pricing architectures, modelling revenue scenarios, and identifying monetisation leakage. Work spans outcome-based pricing proposals, SKU constructs, entitlement policy redesigns, and financial models — contributing $28M+ in ARR at Freshworks.</p>
       </div>
       <div class="competency-card">
         <h3>GTM Strategy &amp; Operations</h3>
-        <p>I build go-to-market engines from scratch — TAM definition, pipeline modelling, sales playbooks, and cross-functional programme management. I've led market entries, ABM programmes, and PLG experiments across India and APAC.</p>
+        <p>Building go-to-market programmes from scratch — TAM definition, pipeline modelling, sales playbooks, and cross-functional programme management. Experience across India and APAC market entries, ABM campaigns, and PLG experiments.</p>
       </div>
       <div class="competency-card">
         <h3>Financial Modelling &amp; Tooling</h3>
-        <p>I translate strategy into numbers. I build 3-year financial forecasts, ROI calculators, and KPI dashboards that executives actually use — my AI Agent ROI Calculator is now a standard asset in enterprise deal cycles globally at Freshworks.</p>
+        <p>Translating strategy into numbers. 3-year financial forecasts, ROI calculators, and KPI dashboards that executives actually use — the AI Agent ROI Calculator is now a standard asset in enterprise deal cycles globally at Freshworks.</p>
       </div>
     </div>
   </div>
@@ -176,59 +243,81 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
 
 <section id="work">
   <div class="container">
-    <div class="divider"></div>
+    <div class="divider" aria-hidden="true"></div>
     <h2 class="section-title">Selected Work</h2>
-    <p class="section-subtitle">End-to-end ownership from problem to revenue impact.</p>
+    <p class="section-subtitle">Three problems. Three different bets. Roughly $28M in revenue.</p>
     <div class="work-grid">
 
+      <!-- Case 1: Pricing -->
       <div class="case-card">
         <div class="case-tag">Pricing &amp; Monetisation</div>
         <h3>Pricing a net-new AI product from zero — Freddy AI Agent</h3>
         <div class="case-section">
           <strong>Challenge</strong>
-          <p>Freshworks was launching an AI Agent product into a crowded market (competing with Agentforce, Intercom, HubSpot) with no established pricing precedent for agentic AI and no internal playbook to draw from.</p>
+          <p>Freshworks was launching an AI Agent product into a crowded market (Agentforce, Intercom, HubSpot) with no established pricing precedent for agentic AI and no internal playbook.</p>
         </div>
         <div class="case-section">
           <strong>Approach</strong>
-          <p>I owned the full lifecycle — evaluated session-based, consumption, and outcome-based models; defined SKU constructs and entitlement logic; benchmarked Tier-1 competitors on pricing structure, packaging tiers, and discount posture; built a 3-year financial model with adoption curves and cost-to-serve sensitivity analysis; developed an interactive ROI Calculator that models customer-specific value across deflection, productivity, and cost savings; authored all GTM collaterals and led company-wide enablement across Sales, CS, and partners globally.</p>
+          <ul>
+            <li>Evaluated session-based, consumption, and outcome-based pricing models; defined SKU constructs and entitlement logic</li>
+            <li>Benchmarked Tier-1 competitors on pricing structure, packaging tiers, and discount posture to stress-test positioning</li>
+            <li>Built a 3-year financial model with adoption curves, cost-to-serve assumptions, and sensitivity analysis across volume scenarios</li>
+            <li>Designed an AI Agent ROI Calculator modelling customer-specific value across deflection, productivity, and cost savings — iterated on field feedback and drove global GTM rollout</li>
+            <li>Authored discount guardrails, tier-eligibility criteria, and pricing FAQs; handled escalations for non-standard deal structures</li>
+          </ul>
         </div>
         <div class="case-section">
           <strong>Result</strong>
-          <p>Investment case approved by executive leadership. Freddy AI Agent positioned for ~$10M ARR with 4x growth in session volumes. 2x projected revenue achieved within two quarters. ROI Calculator adopted as a standard asset in CXO-level enterprise deal cycles globally.</p>
+          <p>Investment case approved by executive leadership. Positioned for ~$10M ARR with 4x growth in session volumes. 2x projected revenue achieved within two quarters. ROI Calculator adopted as a standard asset in CXO-level enterprise deal cycles globally.</p>
         </div>
       </div>
 
+      <!-- Case 2: PLG -->
       <div class="case-card">
-        <div class="case-tag">Revenue Operations &amp; Monetisation Policy</div>
-        <h3>Closing a $13M monetisation gap through policy redesign</h3>
+        <div class="case-tag">Product-Led Growth</div>
+        <h3>Redesigning onboarding to reduce drop-off — Freshworks CRM &amp; Freshsales</h3>
         <div class="case-section">
           <strong>Challenge</strong>
-          <p>Freshworks had two silent revenue leaks: chatbot usage that had been offered for free was not converting to paid, and high discounting across top products was eroding ARR without a governance mechanism.</p>
+          <p>New signups on two CRM products weren't reaching activation milestones. Drop-off was concentrated in the first few sessions — before users had explored enough of the product to convert or expand.</p>
         </div>
         <div class="case-section">
           <strong>Approach</strong>
-          <p>I identified the gaps through policy analysis and cross-functional data reviews. I redesigned chatbot session entitlements to convert previously free usage into a monetised tier with clear segment-level thresholds. Separately, I designed and implemented programmatic escalator clauses across the product portfolio — creating automatic revenue recovery mechanisms tied to usage growth — and drove execution in partnership with RevOps and Finance.</p>
+          <ul>
+            <li>Mapped drop-off points using Heap behavioral data and Appcues session analytics across both products</li>
+            <li>Redesigned onboarding modal sequences to surface core features at the right moment in the user journey</li>
+            <li>Introduced contextual nudges and quick-help tooltips to guide users without interrupting workflow</li>
+            <li>Built feature-based user profiles and progressive badges to incentivize deeper product exploration</li>
+            <li>Coordinated shipping with engineering, content, and design; iterated based on in-product funnel data</li>
+          </ul>
         </div>
         <div class="case-section">
           <strong>Result</strong>
-          <p>~$13M ARR contribution in FY'25. Both initiatives are now embedded in standard commercial and renewal processes. Recognised with the Gold Award for Above &amp; Beyond Performance in Monetisation Initiatives (FY'25).</p>
+          <p>Modal CTR up 11% on FW CRM and 8% on Freshsales. Feature utilization increased 15%. Packaging alignment experiments run in parallel drove a 20% uplift in top-of-funnel volumes and a $3M ARR contribution from chatbot monetisation.</p>
         </div>
       </div>
 
+      <!-- Case 3: GTM -->
       <div class="case-card">
         <div class="case-tag">GTM Strategy &amp; Operations</div>
         <h3>Building a $1.2M pipeline in 4 months — India CRM market entry</h3>
         <div class="case-section">
           <strong>Challenge</strong>
-          <p>FW CRM was designated a focus product in India with no existing market playbook, no dedicated team, and no pipeline. I was the sole owner of strategy, operations, marketing, and BD — effectively a one-person founder for this GTM motion.</p>
+          <p>FW CRM was designated a focus product in India with no existing market playbook, no dedicated team, and no pipeline. I owned strategy, operations, marketing, and BD for the programme.</p>
         </div>
         <div class="case-section">
           <strong>Approach</strong>
-          <p>Mapped the Indian CRM market, defined TAM across high-growth verticals (FinTech, EdTech, Travel, Healthcare), prioritised segments by technology adoption readiness and competitive whitespace, and built a revenue forecast model. Recruited and program-managed a cross-functional team of 14 across Product, Sales, and PMM. Designed industry-specific sales playbooks that shifted messaging from features to business outcomes; built persona-driven value propositions, battlecards, and executive-grade decks for mid-market buyers. Owned pipeline generation end-to-end across partner interlocks, product-led sales plays, and integrated marketing campaigns.</p>
+          <ul>
+            <li>Mapped the Indian CRM market; defined TAM across FinTech, EdTech, Travel, and Healthcare verticals prioritised by adoption readiness and competitive whitespace</li>
+            <li>Built a revenue forecast model and presented investment case to senior leadership</li>
+            <li>Recruited and program-managed a 14-person cross-functional team across Product, Sales, and PMM</li>
+            <li>Designed industry-specific sales playbooks shifting messaging from features to business outcomes</li>
+            <li>Built persona-driven value propositions, battlecards, and executive-grade decks for mid-market buyers</li>
+            <li>Owned pipeline generation end-to-end across partner interlocks, product-led sales plays, and integrated marketing campaigns</li>
+          </ul>
         </div>
         <div class="case-section">
           <strong>Result</strong>
-          <p>$1.2M ARR pipeline in 4 months. Programme served as the template for subsequent focus-product GTM motions at Freshworks. Recognised with the Excellence Award for GTM Strategic Programs (FY'23).</p>
+          <p>$1.2M ARR pipeline in 4 months. Programme adopted as the template for subsequent focus-product GTM motions at Freshworks. Recognised with the Excellence Award for GTM Strategic Programs (FY'23).</p>
         </div>
       </div>
 
@@ -238,21 +327,34 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
 
 <section id="experience" style="background:var(--card)">
   <div class="container">
-    <div class="divider"></div>
+    <div class="divider" aria-hidden="true"></div>
     <h2 class="section-title">Professional Experience</h2>
-    <p class="section-subtitle">Building revenue engines at scale.</p>
+    <p class="section-subtitle">7+ years across pricing, PLG, and GTM in high-growth SaaS.</p>
     <div class="timeline">
 
       <div class="tl-item">
         <h3>Pricing &amp; Monetisation Manager — Product Strategy</h3>
         <div class="meta">Freshworks &middot; Oct 2023 – Present</div>
-        <span class="impact-tag">~$28M+ ARR Impact</span>
+        <span class="impact-tag">~$28M ARR impact</span>
         <ul>
-          <li>Owned full product strategy for Freddy AI Agent — assessed market opportunity, benchmarked Tier-1 competitors (Agentforce, Intercom, Hubspot); designed scalable pricing architecture; delivered executive investment case positioning Freddy AI Agent for ~$10M ARR.</li>
-          <li>Built 3-year financial forecast with adoption curves and cost-to-serve modelling; developed an interactive ROI Calculator to influence CXO discussions and accelerate deal cycles globally.</li>
-          <li>Led CX Platform pricing &amp; packaging strategy for 50K+ customer migration — shaped differentiated positioning and value-based pricing with promotional offers.</li>
-          <li>Restructured chatbot session policy and implemented programmatic escalator clauses across products — combined contribution of ~$13M ARR in FY'25.</li>
-          <li>Recommended shift from agent-based to outcome-based pricing, adopted into the corporate Long-Range Plan (LRP).</li>
+          <li>Designed pricing and packaging for Freddy AI Agent — evaluated model types, defined SKU constructs and entitlement logic, and delivered executive investment case. Positioned for ~$10M ARR with 4x session volume growth.</li>
+          <li>Built a 3-year financial model with adoption curves and cost-to-serve sensitivity analysis; developed an AI Agent ROI Calculator now used in CXO-level deal conversations globally.</li>
+          <li>Led pricing and packaging strategy for 50K+ customer migration to a new CX platform — competitive benchmarking, revised price points, and promotional offers to drive adoption.</li>
+          <li>Redesigned chatbot session entitlements and implemented programmatic escalator clauses across the product portfolio — combined contribution of ~$13M ARR in FY'25.</li>
+          <li>Made a structured case for moving CX pricing from agent-seat-based to an outcome/credit model; recommendation adopted into corporate Long-Range Plan.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <h3>Staff Program Manager — GTM Strategy &amp; Operations</h3>
+        <div class="meta">Freshworks &middot; Sept 2021 – Sept 2023</div>
+        <span class="impact-tag">~$5M+ pipeline &amp; ARR</span>
+        <ul>
+          <li>Owned India GTM for FW CRM — defined TAM across FinTech, EdTech, Travel, and Healthcare, built revenue forecast model, and program-managed a 14-person cross-functional team. Generated $1.2M ARR pipeline in 4 months.</li>
+          <li>Built Digital Natives GTM programme from scratch for Indian startups — TAM definition, positioning, persona-driven battlecards, and BD motion. Result: 40+ new logos and $600K ARR in 2 quarters.</li>
+          <li>Ran ABM for 50+ APMEA accounts on a $100K budget — $2M ARR pipeline and 30% cross-sell uplift.</li>
+          <li>Led enterprise account expansion programme across APJ — used account-level analytics to design tailored GTM plays per account. Resulted in 5 deals at ~$250K ARR and 15+ deals at ~$100K ARR.</li>
+          <li>Produced industry-specific sales playbooks, battlecards, and executive decks shifting messaging from features to business outcomes.</li>
         </ul>
       </div>
 
@@ -260,24 +362,10 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
         <h3>Product Manager — Product-Led Growth</h3>
         <div class="meta">Freshworks &middot; Sept 2020 – Sept 2021</div>
         <ul>
-          <li>Owned PLG initiatives for Freshworks CRM and Freshsales — redesigned onboarding flows using behavioural data from Appcues and Heap to reduce drop-off and drive early feature adoption; improved modal CTRs by 11% (FW CRM) and 8% (Freshsales).</li>
-          <li>Conducted competitive research and user behaviour analysis to identify drop-off points and highlight core features in-product.</li>
-          <li>Introduced non-intrusive nudges and quick-help features increasing feature utilisation by 15%.</li>
-          <li>Created customer profiles and badges based on feature usage to drive early adoption of advanced features.</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <h3>Staff Program Manager — GTM Strategy &amp; Operations</h3>
-        <div class="meta">Freshworks &middot; Sept 2020 – Sept 2023</div>
-        <span class="impact-tag">~$13M+ Pipeline &amp; Revenue</span>
-        <ul>
-          <li>Led end-to-end GTM strategy for FW CRM as a Focus Product — defined TAM, segmented industries, built a $3.2M ARR pipeline in four months with a cross-functional team of 14.</li>
-          <li>Designed $75K demand generation campaigns delivering 300+ qualified leads with 35% lead-to-pipeline conversion.</li>
-          <li>Built from-scratch GTM programme targeting Indian startups — acquired 45+ new logos in two quarters generating $600K ARR.</li>
-          <li>Spearheaded ABM for 50+ key APMEA accounts with $100K budget, delivering $2M ARR pipeline and 30% cross-sell uplift.</li>
-          <li>Led a cross-functional, cross-geography "Big Bets" programme to identify and accelerate enterprise account expansion across APJ — mapped opportunities using account-level analytics, designed tailored GTM plays per account driving upsell and cross-sell. Result: 5 enterprise deals (~$250K ARR each), 15+ deals (~$100K ARR each), $200K ARR qualified pipeline in 1 quarter, and 40% expansion in enterprise account coverage.</li>
-          <li>Created persona-driven value propositions, battlecards, and executive-grade sales playbooks shifting messaging from features to outcomes.</li>
+          <li>Redesigned onboarding flows for Freshworks CRM and Freshsales using Heap and Appcues behavioral data — improved modal CTRs by 11% (FW CRM) and 8% (Freshsales).</li>
+          <li>Mapped drop-off points through user behavior analysis; surfaced core features in-product to improve engagement and reduce early-session churn.</li>
+          <li>Built feature-based user profiles and progressive badges to drive adoption of advanced features.</li>
+          <li>Introduced in-product nudges and quick-help tooltips; increased feature utilization by 15%.</li>
         </ul>
       </div>
 
@@ -285,8 +373,7 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
         <h3>Assistant Systems Engineer</h3>
         <div class="meta">Tata Consultancy Services &middot; Sept 2016 – May 2018</div>
         <ul>
-          <li>Built BI-powered Supply Data Management App for a UK retail client — reduced data processing latency by 75%.</li>
-          <li>Pioneered Scrum adoption to improve delivery velocity and client engagement.</li>
+          <li>Built a Supply Data Management App for a UK retail client using BI tools — reduced data processing latency by 75%.</li>
         </ul>
       </div>
 
@@ -296,7 +383,7 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
 
 <section id="education">
   <div class="container">
-    <div class="divider"></div>
+    <div class="divider" aria-hidden="true"></div>
     <h2 class="section-title">Education</h2>
     <p class="section-subtitle">Strong academic foundations.</p>
     <div class="edu-grid">
@@ -310,43 +397,41 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
         <div class="school">Heritage Institute of Technology</div>
         <div class="detail">GPA: 8.89 / 10 &middot; 2012–2016</div>
       </div>
-      <div class="edu-card">
-        <h3>ISC (Class XII) — Science</h3>
-        <div class="school">94.75% &middot; 2012</div>
-      </div>
-      <div class="edu-card">
-        <h3>ICSE (Class X)</h3>
-        <div class="school">96.6% — School Rank 1 &middot; 2010</div>
-      </div>
     </div>
   </div>
 </section>
 
 <section id="achievements" style="background:var(--card)">
   <div class="container">
-    <div class="divider"></div>
+    <div class="divider" aria-hidden="true"></div>
     <h2 class="section-title">Awards &amp; Recognition</h2>
-    <p class="section-subtitle">Recognised for measurable impact and cross-functional leadership.</p>
+    <p class="section-subtitle">Recognised for measurable impact across pricing and GTM.</p>
     <div class="award-list">
       <div class="award-item">
-        <div class="award-icon">🏆</div>
+        <div class="award-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        </div>
         <div class="award-content">
           <h4>Gold Award — Above &amp; Beyond Performance | Freshworks FY'25</h4>
-          <p>For monetisation initiatives including Freddy AI Agent pricing and session policy redesign — $25M+ ARR impact.</p>
+          <p>For monetisation initiatives including Freddy AI Agent pricing and session policy redesign — $28M+ ARR impact.</p>
         </div>
       </div>
       <div class="award-item">
-        <div class="award-icon">🏆</div>
+        <div class="award-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        </div>
         <div class="award-content">
           <h4>Excellence Award — GTM Strategic Programs | Freshworks FY'23</h4>
           <p>For India CRM market entry and Digital Natives GTM programme — $1.8M+ ARR pipeline impact.</p>
         </div>
       </div>
       <div class="award-item">
-        <div class="award-icon">⭐</div>
+        <div class="award-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
         <div class="award-content">
           <h4>Top 10% — 'Champion' / 'Exceeds Expectations'</h4>
-          <p>Consistently rated in the top decile of the team across all annual performance cycles.</p>
+          <p>Consistently rated in the top decile of the team across all annual performance cycles at Freshworks.</p>
         </div>
       </div>
     </div>
@@ -355,19 +440,36 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
 
 <section id="contact" class="contact-section">
   <div class="container">
-    <div class="divider" style="margin-left:auto;margin-right:auto"></div>
+    <div class="divider" aria-hidden="true" style="margin-left:auto;margin-right:auto"></div>
     <h2 class="section-title">Let's Connect</h2>
+    <p class="section-subtitle">Open to pricing, monetisation, and GTM strategy roles.</p>
     <div class="contact-info">
-      <p><a href="mailto:pgp18.sneha@spjimr.org">pgp18.sneha@spjimr.org</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/ghosh-sneha/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      <p>
+        <a href="mailto:pgp18.sneha@spjimr.org">pgp18.sneha@spjimr.org</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.linkedin.com/in/ghosh-sneha/" target="_blank" rel="noopener noreferrer" aria-label="Sneha Ghosh on LinkedIn">LinkedIn</a>
+      </p>
     </div>
     <div class="btn-group">
-      <a href="#contact" class="btn-cta">Get in Touch</a>
-      <a href="#" class="btn-cv">Download CV</a>
+      <a href="mailto:pgp18.sneha@spjimr.org" class="btn-cta">Email Me Directly</a>
+      <a href="SnehaGhosh_CV.pdf" class="btn-cv" download>Download CV</a>
     </div>
   </div>
 </section>
 
-<footer>&copy; 2026 Sneha Ghosh. All rights reserved.</footer>
+<footer>
+  <div class="footer-links">
+    <a href="mailto:pgp18.sneha@spjimr.org" aria-label="Email Sneha">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      pgp18.sneha@spjimr.org
+    </a>
+    <a href="https://www.linkedin.com/in/ghosh-sneha/" target="_blank" rel="noopener noreferrer" aria-label="Sneha Ghosh on LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+  </div>
+  <p>&copy; 2026 Sneha Ghosh &middot; Built with HTML, hosted on GitHub Pages</p>
+</footer>
 
 </body>
 </html>
